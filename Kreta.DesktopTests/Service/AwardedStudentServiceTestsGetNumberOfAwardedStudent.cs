@@ -8,18 +8,18 @@ namespace Kreta.Desktop.Service.Tests
     public class AwardedStudentServiceTestsGetNumberOfAwardedStudent
     {
         private readonly AwardedStudentService _awardedStudentService;
-        private readonly Mock<IAwardedStudentRepo> _awardedStudentRepo = new Mock<IAwardedStudentRepo>();
+        private readonly Mock<IAwardedStudentRepo> _awardedStudentRepoMock = new Mock<IAwardedStudentRepo>();
 
         public AwardedStudentServiceTestsGetNumberOfAwardedStudent()
         {
-            _awardedStudentService = new AwardedStudentService(_awardedStudentRepo.Object);
+            _awardedStudentService = new AwardedStudentService(_awardedStudentRepoMock.Object);
         }
 
         [TestMethod()]
         public void GetNumberOfAwardedStudentEmptyListTest()
         {
             // arrange
-            _awardedStudentRepo
+            _awardedStudentRepoMock
                 .Setup(mock => mock.FindAll())
                 .Returns(Enumerable.Empty<AwardedStudent>().ToList());
             // act
@@ -47,7 +47,7 @@ namespace Kreta.Desktop.Service.Tests
                     StudentId=Guid.NewGuid(),
                 },
             };
-            _awardedStudentRepo
+            _awardedStudentRepoMock
                 .Setup(mock => mock.FindAll())
                 .Returns(awardedStudents);
             // act
