@@ -59,9 +59,14 @@ namespace Kreta.Desktop.Service.Tests
         [TestMethod()]
         public void GetNumberOfAwardedStudentMoreStudentReciveSeveralScholarshupListTest()
         {
+            // arange
             Guid studentId1 = Guid.NewGuid();
             Guid studentId2 = Guid.NewGuid();
             Guid studentId3 = Guid.NewGuid();
+            
+            // act
+
+            // assert
         }
     }
 }
