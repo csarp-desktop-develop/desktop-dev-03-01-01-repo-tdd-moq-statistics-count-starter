@@ -1,5 +1,5 @@
 ﻿using Kreta.Desktop.Repos;
-using MenuProject.Models.Scholarship;
+using Kreta.Desktop.Models.Scholarship;
 using Moq;
 
 namespace Kreta.Desktop.Service.Tests
