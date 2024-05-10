@@ -1,9 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MenuProject.ViewModels.Base;
-using MenuProject.ViewModels.SchoolCitizens;
+using Kreta.Desktop.ViewModels.Base;
+using Kreta.Desktop.ViewModels.SchoolCitizens;
 
-namespace MenuProject.ViewModels
+namespace Kreta.Desktop.ViewModels
 {
     partial class  MainWindowViewModel : BaseViewModel
     {

@@ -1,28 +1,14 @@
-﻿using MenuProject.Models;
-using System;
+﻿using Kreta.Desktop.Database;
+using Kreta.Desktop.Models;
 using System.Collections.Generic;
 
-namespace MenuProject.Repos
+namespace Kreta.Desktop.Repos
 {
-    class SubjectRepo
+    class SubjectRepo : ISubjectRepo
     {
-        private List<Subject> subjects = new()
-        {
-            new Subject
-            {
-                ID=Guid.NewGuid(),
-                SubjectName="Történelem"
-            },
-            new Subject
-            {
-                ID=Guid.NewGuid(),
-                SubjectName="Földrajz"
-            }
-        };
-
         public List<Subject> FindAll()
         {
-            return subjects;
+            return KretaDatabase.Subjects;
         }
     }
 }

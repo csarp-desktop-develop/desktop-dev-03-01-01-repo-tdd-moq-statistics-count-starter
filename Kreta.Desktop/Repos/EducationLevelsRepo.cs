@@ -1,20 +1,15 @@
-﻿using System;
+﻿using Kreta.Desktop.Models;
+using Kreta.Desktop.Repos;
+using Kreta.Desktop.Database;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace MenuProject.Repos
+namespace Kreta.Desktop.Repos
 {
-    public class EducationLevelsRepo
+    public class EducationLevelsRepo : IEducationLevelRepo
     {
-        private List<String> _educationLevels= new() { "érettségi", "szakképzés", "szakmai vizsga" };
-        public List<string> FindAll()
+        public List<EducationLevel> FindAll()
         {
-            return _educationLevels;
-        }
-
-        public string FindFirst()
-        {
-            return FindAll().FirstOrDefault() ?? string.Empty;
+            return KretaDatabase.EducationLevels;
         }
     }
 }

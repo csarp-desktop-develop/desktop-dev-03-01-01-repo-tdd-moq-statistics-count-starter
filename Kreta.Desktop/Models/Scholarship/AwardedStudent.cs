@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MenuProject.Models.Scholarship
+namespace Kreta.Desktop.Models.Scholarship
 {
     public class AwardedStudent
     {

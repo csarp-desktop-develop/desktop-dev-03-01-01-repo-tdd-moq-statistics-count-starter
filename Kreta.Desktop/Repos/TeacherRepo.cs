@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using MenuProject.SchoolCitizens;
+using Kreta.Desktop.SchoolCitizens;
 using Kreta.Desktop.Database;
 
-namespace MenuProject.Repos
+namespace Kreta.Desktop.Repos
 {
     public class TeacherRepo
     {

@@ -1,10 +1,10 @@
 ﻿using Kreta.Desktop.Database;
-using MenuProject.SchoolCitizens;
+using Kreta.Desktop.SchoolCitizens;
 using System.Collections.Generic;
 
-namespace MenuProject.Repos
+namespace Kreta.Desktop.Repos
 {
-    public class StudentRepo
+    public class StudentRepo : IStudentRepo
     {
         public List<Student> FindAll()
         {

@@ -1,33 +1,16 @@
 ﻿using Kreta.Desktop.Repos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Kreta.Desktop.Service
 {
-    public class ScholarshipService
+    public class ScholarshipService : IScholarshipService
     {
-        public IAwardedStudentRepo _awardedStudentRepo;
+        private readonly IStudentRepo _studentRepo;
+        private readonly IAwardedStudentRepo _awardedStudentRepo;
 
-        public ScholarshipService(IAwardedStudentRepo awardedStudentRepo) 
+        public ScholarshipService(IStudentRepo studentRepo, IAwardedStudentRepo awardedStudentRepo) 
         {
+            _studentRepo = studentRepo;
             _awardedStudentRepo = awardedStudentRepo;
         }
-
-        public int GetNumberOfAwardedStudent()
-        {
-            List<Guid> awardedStudentsIds = _awardedStudentRepo
-                .FindAll()
-                .Select(awardedStudent => awardedStudent.StudentId)
-                .Distinct()
-                .ToList();
-            return awardedStudentsIds.Count;
-        }
-
-        public int GetNumberOfMontlyPayedStudentScholarshipGreaterThen(int scholarship)
-        {
-            return 0;
-        }
-
     }
 }

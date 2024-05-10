@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MenuProject.SchoolCitizens
+namespace Kreta.Desktop.SchoolCitizens
 {
     public class Parent 
     {

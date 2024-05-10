@@ -1,11 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using MenuProject.Repos;
-using MenuProject.SchoolCitizens;
-using MenuProject.ViewModels.Base;
+using Kreta.Desktop.Repos;
+using Kreta.Desktop.SchoolCitizens;
+using Kreta.Desktop.ViewModels.Base;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace MenuProject.ViewModels.SchoolCitizens
+namespace Kreta.Desktop.ViewModels.SchoolCitizens
 {
     public partial class ParentViewModel : BaseViewModel
     {

@@ -1,16 +1,14 @@
 ﻿using Kreta.Desktop.Database;
 using Kreta.Desktop.Models;
-using System;
 using System.Collections.Generic;
 
 namespace Kreta.Desktop.Repos
 {
-    public class SchoolClassRepo : ISchoolClassRepo
+    public class TypeOfEducationRepo : ITypeOfEducationRepo
     {
-
-        public List<SchoolClass> FindAll()
+        public List<TypeOfEducation> FindAll()
         {
-            return KretaDatabase.SchoolClasses;
+            return KretaDatabase.typeOfEducations;
         }
     }
 }

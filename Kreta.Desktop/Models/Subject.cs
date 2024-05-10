@@ -1,22 +1,44 @@
 ﻿using System;
 
-namespace MenuProject.Models
+namespace Kreta.Desktop.Models
 {
     public class Subject
     {
-        public Subject() { }
-
-        public Subject(Guid iD, string subjectName)
+        public Subject()
         {
-            ID = iD;
-            SubjectName = subjectName;
+            Id = Guid.Empty;
+            SubjectTypeId = Guid.Empty;
+            SubjectName = string.Empty;
+            ShortName = string.Empty;
+            OptionalExaminationSubject = false;
+            CompulsoryExaminationSubject = false;
         }
 
-        public Guid ID { get; set; } = Guid.Empty; 
-        public string SubjectName { get; set; } = string.Empty;
+        public Subject(Guid id, Guid subjectTypeId, string subjectName, string shortName, bool optionalExaminationSubject, bool compulsoryExaminationSubject)
+        {
+            Id = id;
+            SubjectTypeId = subjectTypeId;
+            SubjectName = subjectName;
+            ShortName = shortName;
+            OptionalExaminationSubject = optionalExaminationSubject;
+            CompulsoryExaminationSubject = compulsoryExaminationSubject;
+        }
+
+        public Guid Id { get; set; }
+        public Guid? SubjectTypeId { get; set; }
+        public string SubjectName { get; set; }
+        public string ShortName { get; set; }
+        public bool OptionalExaminationSubject { get; set; }
+        public bool CompulsoryExaminationSubject { get; set; }
+
+        public bool HasId => Id != Guid.Empty;
+        public string Name => $"{SubjectName} ({ShortName})";
+
         public override string ToString()
         {
-            return $"{SubjectName}";
+            string compulsory = CompulsoryExaminationSubject ? "kötelező érettségi tárgy" : "";
+            string optional = OptionalExaminationSubject ? "választható érettségi tárgy" : "";
+            return $"{SubjectName} ({ShortName}) {compulsory} {optional}";
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿using MenuProject.ViewModels.Base;
+﻿using Kreta.Desktop.ViewModels.Base;
 
-namespace MenuProject.ViewModels
+namespace Kreta.Desktop.ViewModels
 {
     class WelcomeViewModel : BaseViewModel
     {

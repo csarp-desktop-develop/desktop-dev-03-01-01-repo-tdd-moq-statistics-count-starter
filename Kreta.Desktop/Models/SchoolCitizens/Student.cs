@@ -1,9 +1,8 @@
-﻿using System;
+﻿using Kreta.Desktop.Models;
+using System;
 
-namespace MenuProject.SchoolCitizens
+namespace Kreta.Desktop.SchoolCitizens
 {
-    public enum SchoolClassType { ClassA, ClassB, ClassC}
-
     public class Student 
     {
         public Student(Guid id, string firstName, string lastName, DateTime birthsDay, bool isWooman, string placeOfBirth, int schoolYear, SchoolClassType schoolClass, string educationLevel)

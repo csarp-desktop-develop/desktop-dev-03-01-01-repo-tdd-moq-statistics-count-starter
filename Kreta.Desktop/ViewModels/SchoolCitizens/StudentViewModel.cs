@@ -1,11 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using MenuProject.Repos;
-using MenuProject.SchoolCitizens;
-using MenuProject.ViewModels.Base;
+using Kreta.Desktop.Repos;
+using Kreta.Desktop.SchoolCitizens;
+using Kreta.Desktop.ViewModels.Base;
 using System.Collections.ObjectModel;
+using System.Linq;
 
-namespace MenuProject.ViewModels.SchoolCitizens
+namespace Kreta.Desktop.ViewModels.SchoolCitizens
 {
     public partial class StudentViewModel : BaseViewModel
     {
@@ -29,7 +30,7 @@ namespace MenuProject.ViewModels.SchoolCitizens
 
         private void UpdateView()
         {
-            EducationLevels = new ObservableCollection<string>(_educationLevelsRepo.FindAll());
+            EducationLevels = new ObservableCollection<string>(_educationLevelsRepo.FindAll().Select(el => el.EducationLevelName));
             Students = new ObservableCollection<Student>(_studentRepo.FindAll());
         }
     }
